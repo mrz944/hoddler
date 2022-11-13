@@ -45,6 +45,7 @@ gem "bootsnap", require: false
 # Use Sass to process CSS
 # gem "sassc-rails"
 
+gem 'binance-connector-ruby', '~> 1.3.0'
 gem 'mongoid', '~> 8.0.2'
 
 group :development, :test do
