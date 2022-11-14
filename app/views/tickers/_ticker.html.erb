@@ -4,6 +4,21 @@
     <%= ticker.symbol %>
   </p>
 
+  <% if ticker.stats %>
+    <p class="my-5">
+      Current price: <%= ticker.stats['current_price']['price'] %>
+    </p>
+    <p class="my-5">
+      Balance: <%= ticker.stats['balance'] %>
+    </p>
+    <p class="my-5">
+      Mean price: <%= ticker.stats['mean_price'] %>
+    </p>
+    <p class="my-5">
+      PnL: <%= ticker.stats['pnl'] %>
+    </p>
+  <% end %>
+
   <% if action_name != "show" %>
     <%= link_to "Show this ticker", ticker, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to 'Edit this ticker', edit_ticker_path(ticker), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>

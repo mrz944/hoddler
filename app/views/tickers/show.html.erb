@@ -14,6 +14,21 @@
 
     <div id="crypto_chart"></div>
 
+    <% if @ticker.stats %>
+      <p class="my-5">
+        Current price: <%= @ticker.stats['current_price']['price'] %>
+      </p>
+      <p class="my-5">
+        Balance: <%= @ticker.stats['balance'] %>
+      </p>
+      <p class="my-5">
+        Mean price: <%= @ticker.stats['mean_price'] %>
+      </p>
+      <p class="my-5">
+        PnL: <%= @ticker.stats['pnl'] %>
+      </p>
+    <% end %>
+
     <%= link_to 'Edit this ticker', edit_ticker_path(@ticker), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <div class="inline-block ml-2">
       <%= button_to 'Destroy this ticker', ticker_path(@ticker), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>

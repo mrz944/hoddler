@@ -3,6 +3,7 @@ class Ticker
   include Mongoid::Timestamps
 
   field :symbol, type: String
+  field :stats, type: Hash
 
   belongs_to :trader
   # TODO: use one set of klines for every user
@@ -20,5 +21,9 @@ class Ticker
 
   def generate_markers
     GenerateMarkers.call(self)
+  end
+
+  def update_stats
+    UpdateTicker.call(self)
   end
 end
