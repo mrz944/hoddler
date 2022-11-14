@@ -3,7 +3,7 @@ class Marker
 
   field :price,          type: BigDecimal
   field :quantity,       type: BigDecimal
-  field :buy?,         type: Boolean
+  field :buy?,           type: Boolean
   field :timestamp,      type: DateTime
 
   belongs_to :ticker

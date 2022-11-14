@@ -42,8 +42,8 @@ class GenerateMarkers < ApplicationService
     mean_price = (quote[:bought] - quote[:sold]) / total_quantity
 
     { 
-      quantity: total_quantity,
-      price: mean_price
+      quantity: total_quantity.round(8),
+      price: mean_price.round(8)
     }
   end
 end
