@@ -1,3 +1,7 @@
+<% content_for :head do %>
+  <%= javascript_import_module_tag 'controllers/ticker_show' %>
+<% end %>
+
 <div class="mx-auto md:w-2/3 w-full flex">
   <div class="mx-auto">
     <% if notice.present? %>
@@ -7,6 +11,8 @@
     <% render @ticker %>
 
     <%= @ticker.symbol %>
+
+    <div id="crypto_chart"></div>
 
     <%= link_to 'Edit this ticker', edit_ticker_path(@ticker), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <div class="inline-block ml-2">
