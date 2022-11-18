@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-full dark">
   <head>
     <title>Hoddler</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,8 +12,13 @@
     <%= yield(:head) %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <body class="h-full bg-white dark:bg-gray-800">
+    <div class="relative flex flex-col">
+      <%= render "layouts/navbar" %>
+    </div>
+
+
+    <main>
       <%= yield %>
     </main>
   </body>
