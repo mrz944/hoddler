@@ -7,16 +7,14 @@ class Api::Binance::ImportTrades < ApplicationService
   end
 
   def call
-    imported_trades = @client.my_trades(symbol: @ticker.symbol)
-
-    trades = imported_trades.map do |t|
+    trades = @client.my_trades(symbol: @ticker.symbol).map do |t|
       {
         price: t[:price].to_f,
         quantity: t[:qty].to_f,
         quote_quantity: t[:quoteQty].to_f,
         commision: t[:commission].to_f,
         buyer?: t[:isBuyer],
-        timestamp: Time.at(t[:time]/1000).utc.to_datetime,
+        timestamp: Time.at(t[:time] / 1000).utc.to_datetime,
         ticker_id: @ticker.id
       }
     end

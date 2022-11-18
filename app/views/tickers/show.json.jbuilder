@@ -1,1 +1,1 @@
-json.partial! "tickers/ticker", ticker: @ticker
+json.partial! 'tickers/ticker', ticker: @ticker

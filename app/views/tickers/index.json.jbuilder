@@ -1,1 +1,1 @@
-json.array! @tickers, partial: "tickers/ticker", as: :ticker
+json.array! @tickers, partial: 'tickers/ticker', as: :ticker
