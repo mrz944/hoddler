@@ -32,6 +32,7 @@ const initCryptoChart = () => {
     borderVisible: false,
   });
 
+  // # TODO: set current price based on data.stats.current_price.price
   Rails.ajax({
     url: window.location.pathname + '.json',
     type: "get",
