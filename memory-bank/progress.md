@@ -113,17 +113,21 @@
    - Currently no user-specific data separation
    - API credentials stored directly in Trader model
 
-2. **TODO: Code Duplication**
-   - Similar code in UpdateTicker and GenerateMarkers services
-   - Need to extract common functionality
+2. **DONE: Code Duplication**
+   - ~~Similar code in UpdateTicker and GenerateMarkers services~~
+   - ~~Need to extract common functionality~~
+   - Extracted common code into TradeCalculations module
 
-3. **TODO: Error Handling**
-   - Limited error handling for API failures
-   - No user feedback for processing errors
+3. **DONE: Error Handling**
+   - ~~Limited error handling for API failures~~
+   - ~~No user feedback for processing errors~~
+   - Added comprehensive error handling and logging in all services
+   - Implemented proper error reporting and status returns
 
-4. **TODO: Root Route**
-   - No defined root route in routes.rb
-   - Should redirect to tickers index
+4. **DONE: Root Route**
+   - ~~No defined root route in routes.rb~~
+   - ~~Should redirect to tickers index~~
+   - Root route now defined as tickers#index
 
 ## Evolution of Project Decisions
 
@@ -135,7 +139,8 @@
 ### Current Direction
 - Need to implement user authentication
 - Enhance visualization capabilities
-- Improve error handling and feedback
+- Improved error handling and feedback
+- Better code organization with shared modules
 
 ### Future Considerations
 - Potential for real-time updates

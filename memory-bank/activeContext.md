@@ -60,6 +60,7 @@
    - Using service objects for business logic
    - Keeping controllers thin
    - Encapsulating API interactions
+   - Enhanced error handling and logging in services
 
 2. **MongoDB for Data Storage**
    - Document-oriented structure for flexible schema
@@ -75,17 +76,19 @@
 1. **API Rate Limiting**
    - Managing Binance API request limits
    - Implementing efficient data fetching strategies
-   - Handling API errors gracefully
+   - Handling API errors gracefully with proper error reporting
 
 2. **Data Consistency**
    - Ensuring accurate trade history
    - Maintaining data integrity across models
    - Handling edge cases in calculations
+   - Improved error handling for data processing
 
 3. **UI Responsiveness**
    - Optimizing chart performance with large datasets
    - Improving loading states and feedback
    - Enhancing mobile experience
+   - Better error feedback to users
 
 ## Important Patterns and Preferences
 
@@ -107,9 +110,11 @@
 - Data retrieval → Model → Service → Controller → View
 
 ### Error Handling
-- Service objects return success/failure status
+- Service objects return success/failure status with detailed error messages
 - Controllers handle errors and provide feedback
 - API errors are logged and handled gracefully
+- Comprehensive logging throughout the application
+- Edge cases like empty data sets and division by zero are handled
 
 ## Learnings and Project Insights
 
