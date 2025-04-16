@@ -28,3 +28,21 @@
 !/app/assets/builds/.keep
 
 /node_modules/*
+
+# Ignore environment variables
+.env
+.env.*
+!.env.example
+
+# Ignore Mac system files
+.DS_Store
+
+# Ignore editor-specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Ignore documentation images
+/docs/screenshots/*
+!/docs/screenshots/.keep

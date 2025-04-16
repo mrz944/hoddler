@@ -1,7 +1,13 @@
 Rails.logger.info("Creating trader with API credentials")
+
+# Use environment variables for API credentials
+# In production, set these in your environment or use Rails credentials
+api_key = ENV['BINANCE_API_KEY'] || 'demo_api_key'
+api_secret = ENV['BINANCE_API_SECRET'] || 'demo_api_secret'
+
 trader = Trader.create!(
-  api_key: 'PLACEHOLDER_API_KEY',
-  api_secret: 'PLACEHOLDER_API_SECRET'
+  api_key: api_key,
+  api_secret: api_secret
 )
 
 Rails.logger.info("Creating initial SOLUSDT ticker")
