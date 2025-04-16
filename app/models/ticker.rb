@@ -11,19 +11,35 @@ class Ticker
   has_many :markers, dependent: :destroy
   has_many :trades, dependent: :destroy
 
+  # Returns service instance for error checking
   def import_trades
-    Api::Binance::ImportTrades.call(self)
+    service = Api::Binance::ImportTrades.new(self)
+    result = service.call
+    Rails.logger.error("Failed to import trades: #{service.errors.join(', ')}") unless result
+    result
   end
 
+  # Returns service instance for error checking
   def import_klines
-    Api::Binance::ImportKlines.call(self)
+    service = Api::Binance::ImportKlines.new(self)
+    result = service.call
+    Rails.logger.error("Failed to import klines: #{service.errors.join(', ')}") unless result
+    result
   end
 
+  # Returns service instance for error checking
   def generate_markers
-    GenerateMarkers.call(self)
+    service = GenerateMarkers.new(self)
+    result = service.call
+    Rails.logger.error("Failed to generate markers: #{service.errors.join(', ')}") unless result
+    result
   end
 
+  # Returns service instance for error checking
   def update_stats
-    UpdateTicker.call(self)
+    service = UpdateTicker.new(self)
+    result = service.call
+    Rails.logger.error("Failed to update stats: #{service.errors.join(', ')}") unless result
+    result
   end
 end
