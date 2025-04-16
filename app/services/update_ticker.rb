@@ -9,7 +9,7 @@ class UpdateTicker < ApplicationService
   def call
     reduced = reduce_trades(@ticker.trades)
     current_price = @client.avg_price(symbol: @ticker.symbol)
-    pnl = (current_price[:price].to_f - reduced[:price]) / reduced[:price]
+    pnl = ((current_price[:price].to_f - reduced[:price]) / reduced[:price]).round(8)
 
     @ticker.stats = {
       current_price: current_price,
