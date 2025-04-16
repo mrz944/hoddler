@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.6'
+ruby '3.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 7.0.4'
+gem 'rails', '~> 7.0.7'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -46,6 +46,7 @@ gem 'bootsnap', require: false
 # gem 'sassc-rails'
 
 gem 'binance-connector-ruby', '~> 1.3.0'
+gem 'haml-rails', '~> 2.0'
 gem 'mongoid', '~> 8.0.2'
 
 group :development, :test do
